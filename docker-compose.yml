@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile-test
+    command: mvn test      
+    
+  app:
+    build:
+      context: .
+    ports:
+      - 8080:8080
